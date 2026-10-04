@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>结束乐队同好会｜孤独摇滚 BOCCHI THE ROCK! 同好交流站</title>
+<meta name="description" content="孤独摇滚（ぼっち・ざ・ろっく！）粉丝同好交流站：作品资料、角色介绍、结束乐队音乐、时间轴与同好留言区。孤独的人们，一起狂欢吧！">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FF4FA3'/%3E%3Cpath d='M50 16 L76 60 L59 60 L67 84 L34 44 L53 44 L42 16 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link href="https://miaoda.feishu.cn/fonts/css2?family=Archivo+Black&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   结束乐队同好会 · 孤独摇滚同好交流站
+   视觉方向：Livehouse 之夜 —— 深紫黑底 + 舞台灯光四色 + 摇滚海报排版
+   ============================================================ */
+:root{
+  --bg:#0E0B14; --bg2:#14101E; --panel:#1B1426; --card:#221933; --card2:#271C38;
+  --line:rgba(244,237,255,.10); --line2:rgba(244,237,255,.18);
+  --text:#F4EEFF; --dim:#A99BC7; --faint:#6F6390;
+  --pink:#FF4FA3; --yellow:#FFC53D; --blue:#4DA6FF; --red:#FF6B6B; --purple:#A78BFA; --green:#4ADE80;
+  --radius:14px;
+  --font:"Noto Sans SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --display:"Archivo Black","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --shadow:0 18px 50px rgba(0,0,0,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--font);
+  font-size:16px; line-height:1.75; overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 500px at 85% -5%, rgba(167,139,250,.10), transparent 60%),
+    radial-gradient(700px 420px at -10% 30%, rgba(77,166,255,.07), transparent 60%);
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--pink);color:#1a0b14}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0;position:relative}
+.sec-head{margin-bottom:52px}
+.sec-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;letter-spacing:.22em;color:var(--pink);
+  text-transform:uppercase;
+}
+.sec-kicker::before{content:"";width:34px;height:3px;background:var(--pink);border-radius:2px}
+.sec-title{font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.2;margin-top:14px;letter-spacing:.02em}
+.sec-sub{color:var(--dim);margin-top:12px;max-width:640px;font-size:15.5px}
+
+/* ---------- 按钮 ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 26px;border-radius:10px;border:1.5px solid var(--line2);
+  font-size:15px;font-weight:700;color:var(--text);background:var(--panel);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s;
+  box-shadow:0 5px 0 rgba(0,0,0,.35);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 0 rgba(0,0,0,.35)}
+.btn:active{transform:translateY(1px);box-shadow:0 3px 0 rgba(0,0,0,.35)}
+.btn-pink{background:var(--pink);border-color:var(--pink);color:#1c0a14}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink)}
+.btn svg{width:17px;height:17px;flex:none}
+
+/* ---------- 顶部导航 ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  background:rgba(14,11,20,.78);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:26px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:17px;letter-spacing:.02em;padding:8px 0}
+.nav-logo .pick{width:26px;height:26px;flex:none}
+.nav-logo small{font-weight:500;color:var(--dim);font-size:12px;letter-spacing:.1em}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav-links a{
+  padding:8px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:var(--dim);
+  transition:color .15s,background .15s;
+}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-links a.active{color:var(--pink);background:rgba(255,79,163,.10)}
+.nav-cta{margin-left:14px}
+.nav-burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line2);border-radius:10px;background:var(--panel);align-items:center;justify-content:center}
+.nav-burger svg{width:20px;height:20px;stroke:var(--text)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:130px 0 90px}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.hero-overlay{position:absolute;inset:0;background:
+  linear-gradient(180deg, rgba(14,11,20,.82) 0%, rgba(14,11,20,.62) 45%, var(--bg) 100%),
+  linear-gradient(90deg, rgba(14,11,20,.55) 0%, rgba(14,11,20,.12) 55%, rgba(14,11,20,.5) 100%);}
+.hero-dots{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(rgba(244,238,255,.16) 1px, transparent 1.6px);background-size:26px 26px;mix-blend-mode:overlay}
+.hero-beams{position:absolute;inset:0;pointer-events:none}
+.hero-beams::before,.hero-beams::after{content:"";position:absolute;top:-12%;width:34vw;height:120%;filter:blur(28px);opacity:.30}
+.hero-beams::before{left:-8%;background:linear-gradient(180deg,var(--pink),transparent 75%);transform:rotate(14deg)}
+.hero-beams::after{right:-6%;background:linear-gradient(180deg,var(--blue),transparent 75%);transform:rotate(-12deg)}
+.hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 24px;width:100%}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;
+  border:1px solid var(--line2);background:rgba(20,16,30,.6);backdrop-filter:blur(6px);
+  font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--yellow);
+}
+.hero-chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}
+.hero-title{margin-top:26px;display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.t-en{
+  font-family:var(--display);font-size:clamp(52px,10vw,120px);line-height:.95;letter-spacing:-.01em;
+  background:linear-gradient(180deg,#fff 20%,#FFB8DC 78%,var(--pink) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 60px rgba(255,79,163,.35);
+}
+.t-cn{
+  margin-top:16px;font-size:clamp(24px,4vw,40px);font-weight:900;letter-spacing:.42em;color:var(--text);
+  -webkit-text-stroke:1px rgba(255,255,255,.25);
+}
+.hero-tag{margin-top:26px;font-size:clamp(18px,2.6vw,26px);font-weight:700;color:var(--yellow);letter-spacing:.06em}
+.hero-desc{margin-top:14px;max-width:600px;color:var(--dim);font-size:15.5px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(20,16,30,.55);backdrop-filter:blur(8px);overflow:hidden;width:fit-content}
+.hero-stat{padding:16px 26px;text-align:center;border-right:1px solid var(--line)}
+.hero-stat:last-child{border-right:none}
+.hero-stat b{display:block;font-size:24px;font-weight:900;font-family:var(--display);color:var(--pink)}
+.hero-stat b.y{color:var(--yellow)} .hero-stat b.b{color:var(--blue)} .hero-stat b.r{color:var(--red)}
+.hero-stat span{font-size:12px;color:var(--dim);letter-spacing:.08em}
+.hero-cta{margin-top:38px;display:flex;flex-wrap:wrap;gap:16px}
+.hero-scroll{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--dim);font-size:12px;letter-spacing:.2em;
+}
+.hero-scroll .wheel{width:24px;height:38px;border:2px solid var(--dim);border-radius:12px;position:relative}
+.hero-scroll .wheel::after{content:"";position:absolute;left:50%;top:7px;width:4px;height:8px;border-radius:2px;background:var(--pink);transform:translateX(-50%);animation:wheel 1.6s ease-in-out infinite}
+@keyframes wheel{0%{opacity:1;top:7px}70%{opacity:0;top:18px}100%{opacity:0;top:7px}}
+
+/* ---------- 跑马灯 ---------- */
+.ticker{background:var(--pink);color:#1c0a14;overflow:hidden;position:relative;z-index:5;padding:10px 0;border-top:1px solid rgba(255,255,255,.25)}
+.ticker-track{display:flex;width:max-content;animation:tick 34s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-weight:900;font-size:14px;letter-spacing:.14em;white-space:nowrap;padding:0 22px;display:inline-flex;align-items:center;gap:22px}
+.ticker-track span::after{content:"♪";font-size:16px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- 作品介绍 ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.about-visual{position:relative}
+.about-visual .frame{
+  position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line2);
+  transform:rotate(-1.6deg);box-shadow:var(--shadow);background:var(--card);
+}
+.about-visual .frame img{width:100%;height:520px;object-fit:cover;object-position:center top}
+.about-visual .polaroid-note{
+  position:absolute;right:-14px;bottom:-16px;background:#FDF3DE;color:#4a3b1e;padding:12px 18px;border-radius:6px;
+  font-size:13px;font-weight:700;transform:rotate(3deg);box-shadow:0 10px 24px rgba(0,0,0,.4);
+}
+.about-visual .tape{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-4deg);width:110px;height:30px;
+  background:rgba(255,197,61,.85);opacity:.85;clip-path:polygon(4% 0,96% 0,100% 100%,0 100%);
+}
+.about-copy .lede{font-size:17px;line-height:2;color:var(--text);font-weight:500}
+.about-copy .lede em{font-style:normal;color:var(--pink);font-weight:700}
+.about-facts{margin-top:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden}
+.fact-row{display:grid;grid-template-columns:130px 1fr;gap:8px;padding:13px 20px;border-bottom:1px solid var(--line);font-size:14.5px}
+.fact-row:last-child{border-bottom:none}
+.fact-row dt{color:var(--faint);font-weight:500}
+.fact-row dd{color:var(--text)}
+.fact-row dd b{color:var(--yellow);font-weight:700}
+.about-news{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.news-chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
+  border:1px solid var(--line2);background:var(--card);font-size:13.5px;font-weight:500;color:var(--dim);
+  transition:border-color .15s,color .15s,transform .15s;
+}
+.news-chip b{color:var(--yellow);font-weight:700}
+.news-chip:hover{border-color:var(--pink);color:var(--text);transform:translateY(-2px)}
+.news-chip svg{width:15px;height:15px;color:var(--pink);flex:none}
+
+/* ---------- 角色 ---------- */
+.chars{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.char-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.char-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+  display:flex;flex-direction:column;
+}
+.char-card:hover{transform:translateY(-8px) rotate(-.5deg);border-color:var(--line2);box-shadow:0 22px 44px rgba(0,0,0,.5)}
+.char-photo{position:relative;padding:14px 14px 0}
+.char-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+.char-tape{position:absolute;top:2px;left:50%;transform:translateX(-50%) rotate(-3deg);width:74px;height:22px;background:rgba(244,238,255,.32);opacity:.8;clip-path:polygon(6% 0,94% 0,100% 100%,0 100%)}
+.char-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.char-name{font-size:19px;font-weight:900;display:flex;align-items:baseline;gap:8px}
+.char-name small{font-size:12.5px;font-weight:700;color:var(--dim);letter-spacing:.06em}
+.char-role{font-size:13px;font-weight:700;letter-spacing:.08em}
+.char-meta{font-size:12.5px;color:var(--faint)}
+.char-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.char-tags span{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--dim)}
+.char-quote{
+  margin-top:6px;padding:10px 12px;border-radius:10px;background:var(--card2);border-left:3px solid var(--qc,var(--pink));
+  font-size:13px;line-height:1.7;color:var(--text);
+}
+.char-desc{font-size:13px;color:var(--dim);line-height:1.85}
+.char-card[data-c="bocchi"]{--qc:var(--pink)}
+.char-card[data-c="nijika"]{--qc:var(--yellow)}
+.char-card[data-c="ryo"]{--qc:var(--blue)}
+.char-card[data-c="kita"]{--qc:var(--red)}
+.char-card[data-c="bocchi"] .char-name small{color:var(--pink)}
+.char-card[data-c="nijika"] .char-name small{color:var(--yellow)}
+.char-card[data-c="ryo"] .char-name small{color:var(--blue)}
+.char-card[data-c="kita"] .char-name small{color:var(--red)}
+
+/* ---------- 音乐 ---------- */
+.music-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.music-visual{position:sticky;top:96px}
+.music-visual .frame{border-radius:18px;overflow:hidden;border:1px solid var(--line2);box-shadow:var(--shadow);transform:rotate(1.4deg)}
+.music-visual .frame img{width:100%;height:430px;object-fit:cover}
+.album-badge{
+  margin-top:18px;background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--line2);
+  border-radius:var(--radius);padding:16px 18px;display:flex;gap:14px;align-items:center;
+}
+.album-disc{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#3a2b52,#140e20 70%);border:2px solid var(--pink);flex:none;position:relative}
+.album-disc::after{content:"";position:absolute;inset:0;margin:auto;width:14px;height:14px;border-radius:50%;background:var(--pink)}
+.album-badge b{display:block;font-size:15px;font-weight:900}
+.album-badge span{font-size:12.5px;color:var(--dim)}
+.tracklist{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.track-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+.track-head b{font-size:15px;font-weight:900}
+.track-head span{font-size:12.5px;color:var(--faint)}
+.track-row{
+  display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;
+  padding:12px 20px;border-bottom:1px solid var(--line);font-size:14.5px;transition:background .15s;
+}
+.track-row:last-child{border-bottom:none}
+.track-row:hover{background:rgba(255,79,163,.06)}
+.track-no{font-family:var(--display);color:var(--faint);font-size:13px}
+.track-name{font-weight:700}
+.track-name small{display:block;font-weight:500;color:var(--dim);font-size:12px;margin-top:1px}
+.track-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--pink);white-space:nowrap}
+.track-tag.blue{color:var(--blue);border-color:rgba(77,166,255,.4)}
+.track-tag.yellow{color:var(--yellow);border-color:rgba(255,197,61,.4)}
+.track-tag.green{color:var(--green);border-color:rgba(74,222,128,.35)}
+.track-tag.purple{color:var(--purple);border-color:rgba(167,139,250,.4)}
+
+/* ---------- 时间轴 ---------- */
+.timeline{border-top:1px solid var(--line);background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.tl{--dot:12px;display:grid;grid-template-columns:110px var(--dot) 1fr;gap:0 18px;max-width:880px;margin:0 auto}
+.tl-item{display:contents}
+.tl-time{padding:6px 0 34px;text-align:right;font-family:var(--display);font-size:15px;color:var(--yellow);padding-top:10px}
+.tl-ax{position:relative;display:grid;place-items:start center}
+.tl-ax .dot{
+  width:var(--dot);height:var(--dot);border-radius:50%;margin-top:10px;justify-self:center;
+  background:var(--bg);border:2.5px solid var(--pink);box-shadow:0 0 0 4px rgba(255,79,163,.18);
+}
+.tl-ax .line{position:absolute;top:calc(10px + var(--dot)/2);bottom:0;left:50%;width:2px;transform:translateX(-50%);background:linear-gradient(180deg,var(--pink),rgba(167,139,250,.35))}
+.tl-item:last-child .tl-ax .line{display:none}
+.tl-body{padding:0 0 34px}
+.tl-card{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  transition:border-color .18s,transform .18s;
+}
+.tl-card:hover{border-color:var(--pink);transform:translateX(4px)}
+.tl-card h4{font-size:15.5px;font-weight:900;display:flex;align-items:center;gap:8px}
+.tl-card h4 .flag{width:6px;height:18px;border-radius:3px;background:var(--pink);flex:none}
+.tl-card p{font-size:13.5px;color:var(--dim);margin-top:6px;line-height:1.8}
+
+/* ---------- 交流区 ---------- */
+.board{background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));border-top:1px solid var(--line)}
+.board-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:24px;align-items:start}
+.post-form,.vote-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.post-form h3,.vote-card h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.post-form h3 svg,.vote-card h3 svg{width:18px;height:18px;color:var(--pink)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field label{font-size:12.5px;font-weight:700;color:var(--dim);letter-spacing:.06em}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:10px;color:var(--text);
+  font-family:inherit;font-size:14.5px;padding:11px 14px;transition:border-color .15s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink)}
+.field textarea{resize:vertical;min-height:96px}
+.field select option{background:var(--bg2)}
+.form-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px}
+.form-foot .tip{font-size:12px;color:var(--faint)}
+.post-filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
+.filter-btn{
+  padding:8px 18px;border-radius:999px;border:1px solid var(--line2);background:var(--panel);
+  color:var(--dim);font-size:13.5px;font-weight:700;transition:all .15s;min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+}
+.filter-btn:hover{color:var(--text);border-color:var(--dim)}
+.filter-btn.active{background:var(--pink);border-color:var(--pink);color:#1c0a14}
+.post-wall{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.post-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  border-left:4px solid var(--pc,var(--pink));transition:transform .18s,border-color .18s;
+}
+.post-card:hover{transform:translateY(-3px);border-color:var(--line2)}
+.post-card[data-c="all"]{--pc:var(--purple)}
+.post-card[data-c="bocchi"]{--pc:var(--pink)}
+.post-card[data-c="nijika"]{--pc:var(--yellow)}
+.post-card[data-c="ryo"]{--pc:var(--blue)}
+.post-card[data-c="kita"]{--pc:var(--red)}
+.post-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.post-avatar{
+  width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-weight:900;font-size:15px;color:#150a12;
+}
+.post-name{font-weight:700;font-size:14.5px}
+.post-char{font-size:11.5px;font-weight:700;color:var(--dim);letter-spacing:.05em}
+.post-time{margin-left:auto;font-size:11.5px;color:var(--faint)}
+.post-text{font-size:14.5px;line-height:1.85;color:var(--text);word-break:break-word}
+.post-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.post-tag{font-size:11.5px;color:var(--faint);font-weight:700}
+.like-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;background:none;border:1px solid var(--line2);
+  border-radius:999px;padding:8px 15px;font-size:13.5px;font-weight:700;color:var(--dim);transition:all .15s;min-height:44px;
+}
+.like-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}
+.like-btn.liked{color:var(--pink);border-color:rgba(255,79,163,.5)}
+.like-btn.liked svg{fill:var(--pink);stroke:var(--pink)}
+.like-btn:hover{border-color:var(--pink);color:var(--pink)}
+.empty-tip{grid-column:1/-1;text-align:center;color:var(--faint);padding:44px 0;font-size:14px;border:1px dashed var(--line2);border-radius:var(--radius)}
+
+/* ---------- 投票 ---------- */
+.vote-list{display:flex;flex-direction:column;gap:6px}
+.vote-item{display:flex;flex-direction:column;gap:8px;cursor:pointer;padding:5px 6px;margin:0 -6px;border-radius:10px;transition:background .15s}
+.vote-item:hover{background:rgba(255,255,255,.045)}
+.vote-item .vote-top{display:flex;align-items:center;justify-content:space-between;font-size:13.5px;font-weight:700;margin-bottom:0}
+.vote-item .vote-top b{color:var(--text)}
+.vote-item .vote-top span{color:var(--faint);font-size:12.5px;font-variant-numeric:tabular-nums}
+.vote-bar{position:relative;height:16px;border-radius:999px;background:var(--bg2);overflow:hidden;cursor:pointer;border:1px solid var(--line)}
+.vote-bar i{position:absolute;inset:0 auto 0 0;width:0;border-radius:999px;background:var(--vc,var(--pink));transition:width .5s ease}
+.vote-bar i::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 55%)}
+.vote-item[data-c="bocchi"]{--vc:var(--pink)}
+.vote-item[data-c="nijika"]{--vc:var(--yellow)}
+.vote-item[data-c="ryo"]{--vc:var(--blue)}
+.vote-item[data-c="kita"]{--vc:var(--red)}
+.vote-item[data-c="all"]{--vc:var(--purple)}
+.vote-note{margin-top:14px;font-size:12px;color:var(--faint);text-align:center}
+.vote-note b{color:var(--yellow)}
+
+/* ---------- 语录 ---------- */
+.quotes{border-top:1px solid var(--line)}
+.quotes-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.quote-feature{
+  margin-top:40px;background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--line2);
+  border-radius:18px;padding:34px 36px;position:relative;overflow:hidden;min-height:180px;
+}
+.quote-feature::before{content:"“";position:absolute;top:-30px;left:18px;font-size:180px;font-weight:900;color:rgba(255,79,163,.14);font-family:var(--display);line-height:1}
+.quote-feature .q-mark{font-size:44px;font-weight:900;color:var(--pink);line-height:1;font-family:var(--display)}
+.quote-feature blockquote{font-size:clamp(19px,2.6vw,26px);font-weight:900;line-height:1.6;margin-top:10px;letter-spacing:.02em}
+.quote-feature .q-src{margin-top:18px;font-size:13.5px;color:var(--dim);font-weight:700;display:inline-flex;align-items:center;gap:8px;width:fit-content;max-width:calc(100% - 200px)}
+.quote-feature .q-src i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:900;color:#150a12}
+.quote-feature .q-random{
+  position:absolute;right:28px;bottom:26px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:10px 18px;border-radius:999px;border:1.5px solid var(--pink);background:rgba(255,79,163,.10);
+  color:var(--pink);font-size:13.5px;font-weight:700;transition:all .15s;min-height:44px;
+}
+.quote-feature .q-random:hover{background:var(--pink);color:#1c0a14}
+.quote-feature .q-random svg{width:15px;height:15px}
+.quote-wall{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:22px}
+.quote-mini{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;
+  border-top:3px solid var(--qc2,var(--pink));display:flex;flex-direction:column;gap:10px;transition:transform .18s;
+}
+.quote-mini:hover{transform:translateY(-4px)}
+.quote-mini blockquote{font-size:13.5px;line-height:1.85;color:var(--text)}
+.quote-mini .q-src{font-size:12px;color:var(--faint);font-weight:700;display:flex;align-items:center;gap:6px}
+.quote-mini .q-src i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:10px;font-weight:900;color:#150a12}
+.quote-mini[data-c="bocchi"]{--qc2:var(--pink)}
+.quote-mini[data-c="nijika"]{--qc2:var(--yellow)}
+.quote-mini[data-c="ryo"]{--qc2:var(--blue)}
+.quote-mini[data-c="kita"]{--qc2:var(--red)}
+
+/* ---------- 页脚 ---------- */
+.footer{border-top:1px solid var(--line);background:var(--bg2);padding:56px 0 40px;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer h5{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--pink);margin-bottom:14px}
+.footer-brand .nav-logo{margin-bottom:12px}
+.footer-brand p{font-size:13px;color:var(--dim);line-height:1.9;max-width:360px}
+.footer-links{display:flex;flex-direction:column;gap:4px}
+.footer-links a{font-size:13.5px;color:var(--dim);transition:color .15s;padding:10px 0;min-height:44px;display:flex;align-items:center}
+.footer-links a:hover{color:var(--pink)}
+.footer-disclaimer{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);line-height:1.9}
+.footer-disclaimer b{color:var(--dim)}
+
+/* ---------- 返回顶部 ---------- */
+.to-top{
+  position:fixed;right:26px;bottom:26px;z-index:90;width:48px;height:48px;border-radius:50%;
+  background:var(--pink);color:#1c0a14;border:none;display:grid;place-items:center;
+  box-shadow:0 10px 28px rgba(255,79,163,.4);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-3px)}
+.to-top svg{width:20px;height:20px}
+
+/* ---------- Toast ---------- */
+.toast-wrap{position:fixed;top:80px;left:50%;transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none}
+.toast{
+  background:var(--card2);border:1px solid var(--line2);color:var(--text);padding:11px 22px;border-radius:999px;
+  font-size:13.5px;font-weight:700;box-shadow:var(--shadow);animation:toastIn .3s ease;display:flex;align-items:center;gap:8px;
+}
+.toast svg{width:15px;height:15px;color:var(--green)}
+@keyframes toastIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- 动效 ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .char-grid{grid-template-columns:1fr 1fr}
+  .music-grid{grid-template-columns:1fr;gap:36px}
+  .music-visual{position:static}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .quote-wall{grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px){
+  .section{padding:72px 0}
+  .nav-links{position:fixed;inset:64px 0 auto 0;background:rgba(14,11,20,.97);backdrop-filter:blur(14px);flex-direction:column;padding:18px 24px 26px;gap:6px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;padding:13px 16px;font-size:16px}
+  .nav-cta{display:none}
+  .nav-burger{display:flex}
+  .hero{padding:120px 0 70px}
+  .hero-stat{padding:12px 16px}
+  .hero-stat b{font-size:19px}
+  .board-grid{grid-template-columns:1fr}
+  .post-wall{grid-template-columns:1fr}
+  .quote-wall{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .field input,.field select,.field textarea{font-size:16px}
+  .tl{grid-template-columns:72px var(--dot) 1fr;gap:0 12px}
+  .tl-time{font-size:13px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .quote-feature{padding:26px 22px}
+  .quote-feature .q-random{position:static;margin-top:22px}
+  .hero-scroll{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top" aria-label="返回首页">
+      <svg class="pick" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7 6 4 10 4 14a8 8 0 0 0 16 0c0-4-3-8-8-12z" fill="#FF4FA3"/><path d="M12 7l3 8-3-2-3 2z" fill="#fff"/></svg>
+      結束バンド同好会<small>BOCCHI THE ROCK!</small>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-nav="about">作品</a>
+      <a href="#chars" data-nav="chars">角色</a>
+      <a href="#music" data-nav="music">音乐</a>
+      <a href="#timeline" data-nav="timeline">时间轴</a>
+      <a href="#board" data-nav="board">交流区</a>
+      <a href="#quotes" data-nav="quotes">语录</a>
+      <a class="btn btn-pink nav-cta" href="#board" style="padding:9px 18px;font-size:13.5px">来发帖</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="打开菜单" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/hero.jpg" alt="结束乐队在舞台上演出"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-beams"></div>
+  <div class="hero-inner">
+    <span class="hero-chip">ぼっち・ざ・ろっく！ 同好交流站</span>
+    <h1 class="hero-title">
+      <span class="t-en">BOCCHI</span>
+      <span class="t-en">THE ROCK!</span>
+      <span class="t-cn">孤 独 摇 滚</span>
+    </h1>
+    <p class="hero-tag">孤独的人们，一起狂欢吧！</p>
+    <p class="hero-desc">改编自はまじあき同名漫画，由 CloverWorks 制作的青春摇滚喜剧。社恐吉他少女后藤一里被鼓手虹夏「捡」进 Livehouse STARRY，与结束乐队一起，把不敢开口的日子唱成舞台上的光。</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>12</b><span>动画全12集</span></div>
+      <div class="hero-stat"><b class="y">9.1</b><span>豆瓣高分</span></div>
+      <div class="hero-stat"><b class="b">2022</b><span>秋季开播</span></div>
+      <div class="hero-stat"><b class="r">2期</b><span>制作决定</span></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-pink" href="#board">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        去交流区聊聊
+      </a>
+      <a class="btn btn-ghost" href="#about">了解这部作品</a>
+    </div>
+  </div>
+  <a class="hero-scroll" href="#about"><span class="wheel"></span>SCROLL</a>
+</header>
+
+<!-- ===== 跑马灯 ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span>ぼっち・ざ・ろっく！</span><span>結束バンド</span><span>青春コンプレックス</span><span>ギターと孤独と蒼い惑星</span><span>星座になれたら</span><span>フラッシュバッカー</span><span>光の中へ</span><span>STARRY</span><span>孤独的人们，一起狂欢吧！</span><span>第2期制作决定</span>
+  </div>
+</div>
+
+<!-- ===== 作品介绍 ===== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="frame">
+          <img src="assets/keyvisual.jpg" alt="孤独摇滚动画主视觉海报">
+          <span class="tape"></span>
+        </div>
+        <div class="polaroid-note">4人でも、ひとり。<br>四个人，也是独自一人。</div>
+      </div>
+      <div class="about-copy reveal">
+        <div class="sec-head" style="margin-bottom:22px">
+          <span class="sec-kicker">About · 作品</span>
+          <h2 class="sec-title">一部让社恐狂喜的动画</h2>
+        </div>
+        <p class="lede">重度社恐的少女<em>后藤一里</em>，梦想成为乐队明星，现实中却连跟人说话都会发抖。直到某天，她被鼓手<em>伊地知虹夏</em>「捡」进下北泽的 Livehouse「STARRY」，加入了结束乐队——从此，那个把房间当避难所的女孩，开始在舞台上发光。</p>
+        <p class="lede" style="margin-top:12px">《孤独摇滚！》用夸张到离谱的演出，把社恐日常变成全场爆笑的「名场面」，也让无数人从波奇身上看到<em>那个不敢说话的自己</em>。它不贩卖焦虑，只负责把勇气弹给你听。</p>
+        <dl class="about-facts">
+          <div class="fact-row"><dt>原作</dt><dd>はまじあき（芳文社《Manga Time Kirara MAX》连载）</dd></div>
+          <div class="fact-row"><dt>动画制作</dt><dd>CloverWorks</dd></div>
+          <div class="fact-row"><dt>导演</dt><dd>斋藤圭一郎 ／ 系列构成·脚本：吉田惠里香</dd></div>
+          <div class="fact-row"><dt>角色设计</dt><dd>けろりら ／ 音乐：菊谷知树</dd></div>
+          <div class="fact-row"><dt>首播</dt><dd>2022年10月8日～12月24日 ／ <b>全12集</b></dd></div>
+        </dl>
+        <div class="about-news">
+          <span class="news-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>剧场总集编《孤独摇滚（上/下）》已于 <b>2025年4月/5月</b> 登陆中国内地院线</span>
+          <span class="news-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg>TV动画 <b>第2期制作决定</b>，播出时间待定</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 角色图鉴 ===== -->
+<section class="section chars" id="chars">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Characters · 角色</span>
+      <h2 class="sec-title">结束乐队，全员集合！</h2>
+      <p class="sec-sub">吉他、贝斯、鼓、主唱——四个性格完全相反的少女，凑成了这支让人又哭又笑的结束乐队。</p>
+    </div>
+    <div class="char-grid">
+      <article class="char-card reveal" data-c="bocchi">
+        <div class="char-photo"><img src="assets/bocchi.jpg" alt="后藤一里（波奇酱）"><span class="char-tape"></span></div>
+        <div class="char-body">
+          <h3 class="char-name">后藤一里<small>ぼっちちゃん</small></h3>
+          <div class="char-role" style="color:var(--pink)">主音吉他 · 结束乐队</div>
+          <div class="char-meta">CV 青山吉能 ／ 生日 2月21日</div>
+          <div class="char-tags"><span>重度社恐</span><span>吉他英雄</span><span>反差萌</span></div>
+          <p class="char-quote">「被社会抛弃可是我的拿手好戏！」</p>
+          <p class="char-desc">粉色头发的社恐少女，现实中说话就发抖，网络上却是百万播放的吉他手「吉他英雄」。抱着吉他的她，就是全世界最勇敢的波奇。</p>
+        </div>
+      </article>
+      <article class="char-card reveal" data-c="nijika">
+        <div class="char-photo"><img src="assets/nijika.jpg" alt="伊地知虹夏"><span class="char-tape"></span></div>
+        <div class="char-body">
+          <h3 class="char-name">伊地知虹夏<small>にじか</small></h3>
+          <div class="char-role" style="color:var(--yellow)">鼓手 · 结束乐队队长</div>
+          <div class="char-meta">CV 铃代纱弓 ／ 生日 5月29日</div>
+          <div class="char-tags"><span>阳光队长</span><span>温柔担当</span><span>STARRY</span></div>
+          <p class="char-quote">「你就是我的英雄。」</p>
+          <p class="char-desc">Livehouse「STARRY」的二小姐，把波奇「捡」回乐队的人。永远元气满满，是结束乐队的主心骨，也是所有人的避风港。</p>
+        </div>
+      </article>
+      <article class="char-card reveal" data-c="ryo">
+        <div class="char-photo"><img src="assets/ryo.jpg" alt="山田凉"><span class="char-tape"></span></div>
+        <div class="char-body">
+          <h3 class="char-name">山田凉<small>りょう</small></h3>
+          <div class="char-role" style="color:var(--blue)">贝斯手</div>
+          <div class="char-meta">CV 水野朔 ／ 生日 9月18日</div>
+          <div class="char-tags"><span>寡言贝斯手</span><span>摇滚狂热</span><span>永远缺钱</span></div>
+          <p class="char-quote">「对啊，你不知道吗？」</p>
+          <p class="char-desc">面无表情的「食草系」贝斯手，对摇滚认真到偏执，却总因买乐器而破产。毒舌之下，藏着对乐队最深的温柔。</p>
+        </div>
+      </article>
+      <article class="char-card reveal" data-c="kita">
+        <div class="char-photo"><img src="assets/kita.jpg" alt="喜多郁代"><span class="char-tape"></span></div>
+        <div class="char-body">
+          <h3 class="char-name">喜多郁代<small>きた</small></h3>
+          <div class="char-role" style="color:var(--red)">主唱兼吉他</div>
+          <div class="char-meta">CV 长谷川育美 ／ 生日 4月21日</div>
+          <div class="char-tags"><span>阳光现充</span><span>气氛担当</span><span>波奇头号粉丝</span></div>
+          <p class="char-quote">「让大家看看吧！后藤同学其实超帅的！」</p>
+          <p class="char-desc">以为乐队很轻松而加入的天才现充，却意外成了带动全场的太阳。她是第一个发现「吉他英雄」真身的人，也是波奇最坚实的应援。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 音乐 ===== -->
+<section class="section" id="music">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Music · 音乐</span>
+      <h2 class="sec-title">结束乐队「結束バンド」</h2>
+      <p class="sec-sub">四名声优亲自献声的乐队同名专辑，把动画里的热门歌曲一次收齐。从 OP《青春コンプレックス》到最终话的《光の中へ》，每一首都值得循环。</p>
+    </div>
+    <div class="music-grid">
+      <div class="music-visual reveal">
+        <div class="frame"><img src="assets/band-live.jpg" alt="结束乐队四位成员演出"></div>
+        <div class="album-badge">
+          <div class="album-disc"></div>
+          <div>
+            <b>专辑《結束バンド》</b>
+            <span>2022年12月25日数字发行 · 12月28日CD发售 · 全14曲</span>
+          </div>
+        </div>
+      </div>
+      <div class="tracklist reveal">
+        <div class="track-head"><b>TRACK LIST · 曲目表</b><span>全 14 曲</span></div>
+        <div class="track-row"><span class="track-no">01</span><div class="track-name">青春コンプレックス<small>OP主题曲 · 喜多郁代 演唱</small></div><span class="track-tag">OP</span></div>
+        <div class="track-row"><span class="track-no">02</span><div class="track-name">ひとりぼっち東京<small>喜多郁代 演唱</small></div><span class="track-tag green">VOCAL</span></div>
+        <div class="track-row"><span class="track-no">03</span><div class="track-name">Distortion!!<small>喜多郁代 演唱</small></div><span class="track-tag green">VOCAL</span></div>
+        <div class="track-row"><span class="track-no">04</span><div class="track-name">ひみつ基地<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">05</span><div class="track-name">ギターと孤独と蒼い惑星<small>第5话插入曲 · 波奇酱高光时刻</small></div><span class="track-tag blue">INSERT</span></div>
+        <div class="track-row"><span class="track-no">06</span><div class="track-name">ラブソングが歌えない<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">07</span><div class="track-name">あのバンド<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">08</span><div class="track-name">カラカラ<small>山田凉 × 伊地知虹夏 演唱</small></div><span class="track-tag yellow">DUO</span></div>
+        <div class="track-row"><span class="track-no">09</span><div class="track-name">なにが悪い<small>第8～11话片尾曲</small></div><span class="track-tag">ED</span></div>
+        <div class="track-row"><span class="track-no">10</span><div class="track-name">忘れてやらない<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">11</span><div class="track-name">星座になれたら<small>剧场总集编主题曲</small></div><span class="track-tag purple">MOVIE</span></div>
+        <div class="track-row"><span class="track-no">12</span><div class="track-name">フラッシュバッカー<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">13</span><div class="track-name">転がる岩、君に朝が降る<small>结束乐队</small></div><span class="track-tag"></span></div>
+        <div class="track-row"><span class="track-no">14</span><div class="track-name">光の中へ<small>最终话片尾曲</small></div><span class="track-tag">FINAL ED</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 时间轴 ===== -->
+<section class="section timeline" id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Timeline · 时间轴</span>
+      <h2 class="sec-title">从四格漫画到全球狂欢</h2>
+      <p class="sec-sub">一段属于《孤独摇滚！》的时间线——记录波奇酱和大家走过的每一步。</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time">2018</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>漫画连载开始</h4><p>はまじあき在芳文社《Manga Time Kirara MAX》开始连载四格漫画《孤独摇滚！》。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2021.02</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>TV动画化发表</h4><p>官方宣布动画化决定，由 CloverWorks 负责制作。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2022.10</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>TV动画播出</h4><p>全12集开播，全网掀起「孤独摇滚」热潮——社恐波奇酱火遍世界。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2022.12</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>专辑《結束バンド》发售</h4><p>乐队同名专辑数字发行（12月28日CD发售），全14曲一次收齐。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2023</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>口碑与奖项</h4><p>荣获 Anime Trending 2022 秋季动画大奖最佳动画等多项荣誉，豆瓣评分至今保持在 9.1。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2024</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>剧场总集编上映</h4><p>《劇場総集編ぼっち・ざ・ろっく！》「Re:」「Re:Re:」日本公映，主题曲为《星座になれたら》。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2025.02</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>第2期制作决定</h4><p>TV动画第2期正式宣布制作，监督由山本ゆうすけ接棒，播出时间待定。</p></div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2025.04</div>
+        <div class="tl-ax"><span class="dot"></span><span class="line"></span></div>
+        <div class="tl-body"><div class="tl-card"><h4><span class="flag"></span>剧场版内地公映</h4><p>《孤独摇滚（上/下）》登陆中国内地院线——孤独的人们，一起狂欢吧！</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 同好交流区 ===== -->
+<section class="section board" id="board">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Community · 交流区</span>
+      <h2 class="sec-title">同好交流区</h2>
+      <p class="sec-sub">留下你想说的话吧——分享入坑经历、最爱的场景、音乐感想，或者单纯喊一句「波奇酱天下第一」。发言会保存在你的浏览器里，欢迎常来。</p>
+    </div>
+    <div class="board-grid">
+      <div class="post-form reveal">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          发布留言
+        </h3>
+        <form id="postForm" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="postName">你的昵称</label>
+              <input id="postName" type="text" maxlength="12" placeholder="例：吉他英雄的粉丝" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="postChar">我推（留言标签）</label>
+              <select id="postChar">
+                <option value="all">结束乐队（全队）</option>
+                <option value="bocchi">后藤一里</option>
+                <option value="nijika">伊地知虹夏</option>
+                <option value="ryo">山田凉</option>
+                <option value="kita">喜多郁代</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="postText">留言内容</label>
+            <textarea id="postText" maxlength="300" placeholder="想对结束乐队说什么？"></textarea>
+          </div>
+          <div class="form-foot">
+            <span class="tip"><span id="charCount">0</span>/300</span>
+            <button class="btn btn-pink" type="submit" style="padding:11px 26px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+              发布
+            </button>
+          </div>
+        </form>
+      </div>
+      <aside class="vote-card reveal">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          结束乐队本命投票
+        </h3>
+        <div class="vote-list" id="voteList"></div>
+        <p class="vote-note">点击色条即可投票 · 已投：<b id="voteTotal">0</b> 票</p>
+      </aside>
+    </div>
+    <div class="post-filters reveal" id="postFilters">
+      <button class="filter-btn active" data-filter="all">全部留言</button>
+      <button class="filter-btn" data-filter="bocchi">后藤一里</button>
+      <button class="filter-btn" data-filter="nijika">伊地知虹夏</button>
+      <button class="filter-btn" data-filter="ryo">山田凉</button>
+      <button class="filter-btn" data-filter="kita">喜多郁代</button>
+    </div>
+    <div class="post-wall" id="postWall"></div>
+  </div>
+</section>
+
+<!-- ===== 语录 ===== -->
+<section class="section quotes" id="quotes">
+  <div class="wrap">
+    <div class="quotes-head reveal">
+      <div>
+        <span class="sec-kicker">Quotes · 语录</span>
+        <h2 class="sec-title">那些让人又哭又笑的台词</h2>
+      </div>
+    </div>
+    <div class="quote-feature reveal" id="quoteFeature">
+      <div>
+        <span class="q-mark">“</span>
+        <blockquote id="quoteText">现实好可怕。但总觉得，接下来会有很多开心的事等着我。</blockquote>
+        <div class="q-src" id="quoteSrc"><i style="background:var(--pink)">波</i>后藤一里 · 动画名场面台词</div>
+      </div>
+      <button class="q-random" id="quoteRandom">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6M21 4v6h-6M1 20v-6h6M21 20v-6h-6M3.5 10a8.5 8.5 0 0 1 14-3M20.5 14a8.5 8.5 0 0 1-14 3"/></svg>
+        换一句波奇能量
+      </button>
+    </div>
+    <div class="quote-wall">
+      <div class="quote-mini reveal" data-c="bocchi"><blockquote>「被社会抛弃可是我的拿手好戏！」</blockquote><div class="q-src"><i style="background:var(--pink)">波</i>后藤一里 · 第3话</div></div>
+      <div class="quote-mini reveal" data-c="bocchi"><blockquote>「现实好可怕。但总觉得，接下来会有很多开心的事等着我。」</blockquote><div class="q-src"><i style="background:var(--pink)">波</i>后藤一里</div></div>
+      <div class="quote-mini reveal" data-c="nijika"><blockquote>「你就是我的英雄。」</blockquote><div class="q-src"><i style="background:var(--yellow)">虹</i>伊地知虹夏</div></div>
+      <div class="quote-mini reveal" data-c="bocchi"><blockquote>「请看看结束乐队的结束力吧！！」</blockquote><div class="q-src"><i style="background:var(--pink)">波</i>后藤一里</div></div>
+      <div class="quote-mini reveal" data-c="kita"><blockquote>「让大家看看吧！后藤同学其实超帅的！」</blockquote><div class="q-src"><i style="background:var(--red)">喜</i>喜多郁代 · 文化祭</div></div>
+      <div class="quote-mini reveal" data-c="ryo"><blockquote>「对啊，你不知道吗？」</blockquote><div class="q-src"><i style="background:var(--blue)">凉</i>山田凉</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="#top">
+          <svg class="pick" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7 6 4 10 4 14a8 8 0 0 0 16 0c0-4-3-8-8-12z" fill="#FF4FA3"/><path d="M12 7l3 8-3-2-3 2z" fill="#fff"/></svg>
+          結束バンド同好会
+        </a>
+        <p>献给每一个「不敢开口」却仍在努力发光的你。<br>在这里，孤单也可以一起狂欢。</p>
+      </div>
+      <div>
+        <h5>站内导航</h5>
+        <div class="footer-links">
+          <a href="#about">作品介绍</a><a href="#chars">角色图鉴</a><a href="#music">结束乐队音乐</a><a href="#timeline">作品时间轴</a><a href="#board">同好交流区</a>
+        </div>
+      </div>
+      <div>
+        <h5>关于本站</h5>
+        <div class="footer-links">
+          <a href="#top">回到顶部</a><a href="#board">加入讨论</a><a href="#quotes">随机语录</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      本站为粉丝自制的<b>非官方同好交流站</b>，与作品版权方无隶属关系。页面中的角色形象与图片版权归 ©はまじあき／芳文社・アニプレックス 及相关权利方所有，素材仅用于同好交流与推荐，请支持正版。留言区内容由同好自行发布，请友善发言。
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+/* ========== 工具 ========== */
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => Array.from(el.querySelectorAll(s));
+const CHAR_META = {
+  all:   {name:'结束乐队', color:'#A78BFA'},
+  bocchi:{name:'后藤一里', color:'#FF4FA3'},
+  nijika:{name:'伊地知虹夏', color:'#FFC53D'},
+  ryo:   {name:'山田凉',   color:'#4DA6FF'},
+  kita:  {name:'喜多郁代', color:'#FF6B6B'}
+};
+
+/* ---------- Toast ---------- */
+function toast(msg){
+  const w = $('#toastWrap');
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' + msg;
+  w.appendChild(el);
+  setTimeout(()=>{ el.style.transition='opacity .3s'; el.style.opacity='0'; setTimeout(()=>el.remove(), 300); }, 2400);
+}
+
+/* ---------- 跑马灯（复制一份实现无缝循环） ---------- */
+(function(){
+  const track = $('#tickerTrack');
+  track.innerHTML += track.innerHTML;
+})();
+
+/* ---------- 移动端菜单 ---------- */
+const navBurger = $('#navBurger'), navLinks = $('#navLinks');
+navBurger.addEventListener('click', ()=>{
+  const open = navLinks.classList.toggle('open');
+  navBurger.setAttribute('aria-expanded', open);
+});
+$$('#navLinks a').forEach(a=>a.addEventListener('click', ()=>{ navLinks.classList.remove('open'); navBurger.setAttribute('aria-expanded','false'); }));
+
+/* ---------- 导航高亮 + 滚动显现 + 返回顶部 ---------- */
+const navAnchors = $$('#navLinks a[data-nav]');
+const sectionMap = {};
+navAnchors.forEach(a=>{ sectionMap[a.dataset.nav] = document.getElementById(a.dataset.nav); });
+const sections = Object.values(sectionMap).filter(Boolean);
+
+const navIO = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    const id = en.target.id;
+    navAnchors.forEach(a=>a.classList.toggle('active', a.dataset.nav === id));
+  });
+},{rootMargin:'-38% 0px -55% 0px'});
+sections.forEach(s=>navIO.observe(s));
+
+const revealIO = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); revealIO.unobserve(en.target); } });
+},{threshold:.12});
+$$('.reveal').forEach(el=>revealIO.observe(el));
+
+const toTop = $('#toTop');
+window.addEventListener('scroll', ()=>{ toTop.classList.toggle('show', window.scrollY > 700); }, {passive:true});
+toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ========== 同好留言板 ========== */
+const POST_KEY = 'btr_posts_v1';
+const now = Date.now();
+const seedPosts = [
+  {id:'s1', name:'站长·结束', char:'all', text:'欢迎来到结束乐队同好会！这里可以分享你入坑《孤独摇滚》的故事，也可以一起等第二季。发言请友善，禁止引战与剧透刷屏。', time:now-86400000*3, likes:58},
+  {id:'s2', name:'吉他英雄的粉丝', char:'bocchi', text:'因为《ギターと孤独と蒼い惑星》入坑的举手！第5话波奇在STARRY那一段，我循环了二十遍，每次听到前奏还是会起鸡皮疙瘩。', time:now-86400000*2, likes:36},
+  {id:'s3', name:'结束乐队十级学者', char:'all', text:'统计了一下：全12集里波奇至少「阴暗爬行」了13次，说错话4次，被人气到飙泪2次——但她最后站上舞台的样子，值得所有人起立鼓掌。', time:now-86400000, likes:27}
+];
+function loadPosts(){
+  try{
+    const raw = localStorage.getItem(POST_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return seedPosts.slice();
+}
+function savePosts(list){
+  try{ localStorage.setItem(POST_KEY, JSON.stringify(list)); }catch(e){}
+}
+let posts = loadPosts();
+let curFilter = 'all';
+
+function fmtTime(t){
+  const diff = Date.now() - t;
+  if(diff < 60000) return '刚刚';
+  if(diff < 3600000) return Math.floor(diff/60000) + ' 分钟前';
+  if(diff < 86400000) return Math.floor(diff/3600000) + ' 小时前';
+  const d = new Date(t);
+  return (d.getMonth()+1) + '月' + d.getDate() + '日';
+}
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function renderPosts(){
+  const wall = $('#postWall');
+  const list = posts.filter(p=> curFilter==='all' || p.char===curFilter);
+  if(!list.length){
+    wall.innerHTML = '<div class="empty-tip">这里还空着——勇敢地写下第一条留言吧！</div>';
+    return;
+  }
+  wall.innerHTML = list.map(p=>{
+    const meta = CHAR_META[p.char] || CHAR_META.all;
+    const name = escapeHtml(p.name||'匿名同好');
+    const text = escapeHtml(p.text);
+    return `<article class="post-card" data-c="${p.char}">
+      <div class="post-top">
+        <span class="post-avatar" style="background:${meta.color}">${name.charAt(0)}</span>
+        <div><div class="post-name">${name}</div><div class="post-char"># ${meta.name}</div></div>
+        <span class="post-time">${fmtTime(p.time)}</span>
+      </div>
+      <p class="post-text">${text}</p>
+      <div class="post-foot">
+        <span class="post-tag">${p.id[0]==='s' ? '站务留言' : '同好留言'}</span>
+        <button class="like-btn${p.liked?' liked':''}" data-like="${p.id}" aria-label="点赞">
+          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          ${p.likes || 0}
+        </button>
+      </div>
+    </article>`;
+  }).join('');
+}
+$('#postWall').addEventListener('click', e=>{
+  const btn = e.target.closest('[data-like]');
+  if(!btn) return;
+  const id = btn.dataset.like;
+  const p = posts.find(x=>x.id===id);
+  if(!p) return;
+  if(p.liked){ p.likes = Math.max(0,(p.likes||1)-1); p.liked=false; }
+  else{ p.likes = (p.likes||0)+1; p.liked=true; }
+  savePosts(posts); renderPosts();
+});
+
+$$('#postFilters .filter-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    $$('#postFilters .filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    curFilter = btn.dataset.filter;
+    renderPosts();
+  });
+});
+
+const postForm = $('#postForm');
+const postName = $('#postName'), postChar = $('#postChar'), postText = $('#postText'), charCount = $('#charCount');
+postText.addEventListener('input', ()=> charCount.textContent = postText.value.length);
+postForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = postName.value.trim();
+  const text = postText.value.trim();
+  if(!text){ toast('留言内容不能为空'); postText.focus(); return; }
+  if(!name){ toast('先给自己起个昵称吧'); postName.focus(); return; }
+  posts.unshift({id:'u'+Date.now()+Math.random().toString(36).slice(2,6), name, char:postChar.value, text, time:Date.now(), likes:0});
+  savePosts(posts);
+  postText.value=''; charCount.textContent='0';
+  renderPosts();
+  postText.focus();
+  toast('留言发布成功');
+});
+
+/* ========== 本命投票 ========== */
+const VOTE_KEY = 'btr_vote_v1';
+const VOTE_OPTS = [
+  {c:'bocchi', label:'后藤一里'},
+  {c:'nijika', label:'伊地知虹夏'},
+  {c:'ryo',    label:'山田凉'},
+  {c:'kita',   label:'喜多郁代'},
+  {c:'all',    label:'全队都爱'}
+];
+function loadVote(){
+  try{
+    const raw = localStorage.getItem(VOTE_KEY);
+    if(raw){ const v = JSON.parse(raw); if(v && v.counts) return v; }
+  }catch(e){}
+  return {choice:'', counts:{bocchi:0,nijika:0,ryo:0,kita:0,all:0}};
+}
+function saveVote(v){ try{ localStorage.setItem(VOTE_KEY, JSON.stringify(v)); }catch(e){} }
+let vote = loadVote();
+
+function renderVote(){
+  const total = VOTE_OPTS.reduce((s,o)=> s + (vote.counts[o.c]||0), 0);
+  $('#voteTotal').textContent = total;
+  $('#voteList').innerHTML = VOTE_OPTS.map(o=>{
+    const n = vote.counts[o.c]||0;
+    const pct = total ? Math.round(n/total*100) : 0;
+    const chosen = vote.choice===o.c ? ' ✓ 已投' : '';
+    return `<div class="vote-item" data-c="${o.c}" data-vote="${o.c}" role="button" tabindex="0" aria-label="投票给${o.label}">
+      <div class="vote-top"><b>${o.label}${chosen}</b><span>${n} 票 · ${pct}%</span></div>
+      <div class="vote-bar"><i style="width:${pct}%"></i></div>
+    </div>`;
+  }).join('');
+}
+function doVote(c){
+  if(vote.choice){ toast('你已经投过票啦，感谢参与'); return; }
+  vote.choice = c;
+  vote.counts[c] = (vote.counts[c]||0) + 1;
+  saveVote(vote); renderVote();
+  toast('投票成功，感谢应援！');
+}
+$('#voteList').addEventListener('click', e=>{
+  const bar = e.target.closest('[data-vote]'); if(bar) doVote(bar.dataset.vote);
+});
+$('#voteList').addEventListener('keydown', e=>{
+  if(e.key==='Enter' || e.key===' '){ const bar = e.target.closest('[data-vote]'); if(bar){ e.preventDefault(); doVote(bar.dataset.vote); } }
+});
+
+/* ========== 随机语录 ========== */
+const QUOTES = [
+  {t:'现实好可怕。但总觉得，接下来会有很多开心的事等着我。', c:'bocchi', src:'后藤一里 · 动画名场面台词'},
+  {t:'被社会抛弃可是我的拿手好戏！', c:'bocchi', src:'后藤一里 · 第3话'},
+  {t:'你就是我的英雄。', c:'nijika', src:'伊地知虹夏 · 动画名场面'},
+  {t:'请看看结束乐队的结束力吧！！', c:'bocchi', src:'后藤一里 · 动画名场面'},
+  {t:'让大家看看吧！后藤同学其实超帅的！', c:'kita', src:'喜多郁代 · 文化祭'},
+  {t:'对啊，你不知道吗？', c:'ryo', src:'山田凉 · 动画名场面'},
+  {t:'一个人玩摇滚……也是很开心的！', c:'bocchi', src:'后藤一里 · 动画名场面'},
+  {t:'就算只有一个人，也要把歌唱到最后一刻。', c:'all', src:'结束乐队 · 动画名场面'}
+];
+let qIdx = 0;
+const quoteText = $('#quoteText'), quoteSrc = $('#quoteSrc');
+function showQuote(i){
+  const q = QUOTES[i];
+  quoteText.style.opacity = '0';
+  setTimeout(()=>{
+    quoteText.textContent = '「' + q.t + '」';
+    quoteSrc.innerHTML = `<i style="background:${CHAR_META[q.c] ? CHAR_META[q.c].color : '#A78BFA'}">${q.c==='all'?'結':(q.c==='bocchi'?'波':q.c==='nijika'?'虹':q.c==='ryo'?'凉':'喜')}</i>` + q.src;
+    quoteText.style.transition = 'opacity .3s';
+    quoteText.style.opacity = '1';
+  }, 200);
+}
+$('#quoteRandom').addEventListener('click', ()=>{
+  let n; do{ n = Math.floor(Math.random()*QUOTES.length); }while(n===qIdx && QUOTES.length>1);
+  qIdx = n; showQuote(qIdx);
+});
+
+/* ========== 初始化 ========== */
+renderPosts();
+renderVote();
+
+</script>
+</body>
+</html>
